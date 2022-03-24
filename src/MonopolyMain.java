@@ -7,16 +7,16 @@
  *
  */
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
-public class MonopolyRunner {
+public class MonopolyMain {
     
     
     
     public static void main(String[] args) throws FileNotFoundException {
-        
+
+        Player p1 = new Player("Sergio",1500,0,false);
         ReadBoxBoard b1 = new ReadBoxBoard();
-        b1.readTxt();
+
         
     }
     

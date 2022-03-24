@@ -7,14 +7,15 @@
  * 
  */
 
+import java.util.HashSet;
+
 public class Player {
 
  private String name;
  private int moneyLeft;
  private int positionOnBoard;
- //private ArrayList<Property> propertiesOwned;
- private String icon;
  private boolean isBroken;
+ private HashSet<Property> properties;
 
  // Constructores
 
@@ -24,12 +25,12 @@ public class Player {
  }
  
  // Main Constructor
- public Player(String name, int moneyLeft, int positionOnBoard, String icon, boolean isBroken) {
+ public Player(String name, int moneyLeft, int positionOnBoard, boolean isBroken) {
   this.name = name;
   this.moneyLeft = moneyLeft;
   this.positionOnBoard = positionOnBoard;
-  this.icon = icon;
   this.isBroken = isBroken;
+  this.properties = new HashSet<Property>();
  }
 
 // Getters and Setters
@@ -58,22 +59,6 @@ public class Player {
   this.positionOnBoard = positionOnBoard;
  }
 
- //public ArrayList<Property> getPropertiesOwned() {
- //return propertiesOwned;
- //}
-
- //public void setPropertiesOwned(ArrayList<Property> propertiesOwned) {
- // this.propertiesOwned = propertiesOwned;
- //}
-
- public String getIcon() {
-  return icon;
- }
-
- public void setIcon(String icon) {
-  this.icon = icon;
- }
- 
  public boolean getIsBroken() {
   return isBroken;
  }
@@ -82,8 +67,30 @@ public class Player {
   this.isBroken = isBroken;
  }
 
- // MOTE METHODS
+ public HashSet<Property> getProperties() {
+  return properties;
+ }
 
+ public void setProperties(HashSet<Property> properties) {
+  this.properties = properties;
+ }
 
+ // MORE METHODS
+
+ // Pay an amount of money
+
+public void pay(int amount) {
+  if (getMoneyLeft() > amount) {
+   this.moneyLeft -= amount;
+  } else {
+   System.out.println("The player does not have enough money for this action");
+  }
+}
+
+ // Receive an amount of money
+
+ public void receive(int amount) {
+   this.moneyLeft += amount;
+ }
 
 }
