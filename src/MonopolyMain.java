@@ -9,16 +9,19 @@
 import java.io.FileNotFoundException;
 
 public class MonopolyMain {
-    
-    
-    
+
     public static void main(String[] args) throws FileNotFoundException {
 
         Player p1 = new Player("Sergio",1500,0,false);
         ReadBoxBoard b1 = new ReadBoxBoard();
 
-        
+        ActionsOnTurn.turn(p1);
+        ActionsOnTurn.turn(p1);
+        ActionsOnTurn.turn(p1);
+
+
+
     }
-    
-    
+
+
 }

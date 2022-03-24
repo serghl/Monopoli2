@@ -13,7 +13,7 @@ public class Player {
 
  private String name;
  private int moneyLeft;
- private int positionOnBoard;
+ private static int pos;
  private boolean isBroken;
  private HashSet<Property> properties;
 
@@ -25,10 +25,10 @@ public class Player {
  }
  
  // Main Constructor
- public Player(String name, int moneyLeft, int positionOnBoard, boolean isBroken) {
+ public Player(String name, int moneyLeft, int pos, boolean isBroken) {
   this.name = name;
   this.moneyLeft = moneyLeft;
-  this.positionOnBoard = positionOnBoard;
+  this.pos = pos;
   this.isBroken = isBroken;
   this.properties = new HashSet<Property>();
  }
@@ -36,7 +36,7 @@ public class Player {
 // Getters and Setters
 
  public String getName() {
-  return name;
+  return this.name;
  }
 
  public void setName(String name) {
@@ -51,12 +51,12 @@ public class Player {
   this.moneyLeft = moneyLeft;
  }
 
- public int getPositionOnBoard() {
-  return positionOnBoard;
+ public static int getPos() {
+  return pos;
  }
 
- public void setPositionOnBoard(int positionOnBoard) {
-  this.positionOnBoard = positionOnBoard;
+ public static void setPos(int pos) {
+  Player.pos = pos;
  }
 
  public boolean getIsBroken() {
@@ -75,6 +75,17 @@ public class Player {
   this.properties = properties;
  }
 
+ // To String
+
+ @Override
+ public String toString() {
+  return  "moneyLeft = " + moneyLeft +
+          " - pos = " + pos +
+          " - isBroken = " + isBroken
+          ;
+ }
+
+
  // MORE METHODS
 
  // Pay an amount of money
@@ -90,7 +101,8 @@ public void pay(int amount) {
  // Receive an amount of money
 
  public void receive(int amount) {
-   this.moneyLeft += amount;
+  this.moneyLeft += amount;
  }
+
 
 }
