@@ -7,7 +7,7 @@
  *
  */
 public class ActionsOnLand {
-    public void land (int pos) {
+    public static void land(int pos) {
 
 
     }
