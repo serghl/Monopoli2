@@ -27,17 +27,21 @@ public class ActionsOnTurn {
                                                 int newPos = Player.getPos() + roll;
                                                 System.out.println("Te mueves a la casilla : " + newPos );
                                                 Player.setPos(newPos);
+                                                ActionsOnLand.land(newPos);
                                                 found = true;
                                                 break;
                                         case 2:
                                                 System.out.println("Muestra una lista de las propiedades");
                                                 found = false;
+                                                break;
                                         case 3:
                                                 System.out.println(player.toString());
                                                 found = false;
+                                                break;
                                         default:
                                                 System.out.println("Elige una opcion válida por favor!");
                                                 found = false;
+                                                break;
                                 }
                         }
                 }

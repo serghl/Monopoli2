@@ -14,11 +14,10 @@ public class MonopolyMain {
 
         Player p1 = new Player("Sergio",1500,0,false);
         ReadBoxBoard b1 = new ReadBoxBoard();
-
+        readBoxBoard(b1);
         ActionsOnTurn.turn(p1);
         ActionsOnTurn.turn(p1);
         ActionsOnTurn.turn(p1);
-
 
 
     }

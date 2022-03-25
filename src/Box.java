@@ -10,13 +10,12 @@
 public class Box {
     private int index;
     private String type;
-    private Box typeOf;
+
 
     // Constructor
-    public Box(int index, String type, Box typeOf) {
+    public Box(int index, String type) {
         this.index = index;
         this.type = type;
-        this.typeOf = typeOf;
     }
 
 // Getters y setters
