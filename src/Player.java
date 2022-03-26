@@ -7,6 +7,8 @@
  * 
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class Player {
@@ -15,7 +17,7 @@ public class Player {
  private int moneyLeft;
  private static int pos;
  private boolean isBroken;
- private HashSet<Property> properties;
+ private ArrayList<Box> properties;
 
  // Constructores
 
@@ -30,7 +32,7 @@ public class Player {
   this.moneyLeft = moneyLeft;
   this.pos = pos;
   this.isBroken = isBroken;
-  this.properties = new HashSet<Property>();
+  this.properties = new ArrayList<Box>();
  }
 
 // Getters and Setters
@@ -67,11 +69,11 @@ public class Player {
   this.isBroken = isBroken;
  }
 
- public HashSet<Property> getProperties() {
+ public ArrayList<Box> getProperties() {
   return properties;
  }
 
- public void setProperties(HashSet<Property> properties) {
+ public void setProperties(ArrayList<Box> properties) {
   this.properties = properties;
  }
 
@@ -85,16 +87,26 @@ public class Player {
           ;
  }
 
-
  // MORE METHODS
 
- // Pay an amount of money
+ // Add a property
+ public boolean add(Box property) {
+  return this.properties.add(property);
+ }
 
-public void pay(int amount) {
+ // Show the list of properties1
+ public void showProperties() {
+  System.out.println("Estas son tus propiedades : ");
+  for (int i = 0; i < properties.size(); i++)
+  System.out.println(properties.get(i).getidBox() + "-" + properties.get(i).getType());
+ }
+
+ // Pay an amount of money
+ public void pay(int amount) {
   if (getMoneyLeft() > amount) {
    this.moneyLeft -= amount;
   } else {
-   System.out.println("The player does not have enough money for this action");
+   System.out.println("No tienes suficiente lana para esto!");
   }
 }
 

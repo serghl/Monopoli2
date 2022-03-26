@@ -8,38 +8,35 @@
      */
     import java.io.File;
     import java.io.FileNotFoundException;
-    import java.util.Arrays;
     import java.util.Scanner;
 
 
-
     public class ReadBoxBoard {
-
-        public static void readTxt() throws FileNotFoundException {
+    // Method to crete a board with diferent "sons" of Box class
+        public static Box[] readTxt() throws FileNotFoundException {
             File file = new File("boxBoard1.txt");
             Scanner sc = new Scanner(file);
-            // Data is (int)idBox - (String)boxType - (String)name - (String)color - (int)priceToBuy - (boolean)isMortgaged
-            String boxRow = sc.nextLine();
-            String[] boxData = boxRow.split("-");
-            int idBox = Integer.parseInt(boxData[0]);
-            String type = boxData[1];
             Box[] monopolyBoard = new Box[40];
+            // Data is (int)idBox - (String)boxType - (String)name - (String)color - (int)priceToBuy - (boolean)isMortgaged
             int i = 0;
-            while (sc.hasNext() && i > monopolyBoard.length ) {
+            while (sc.hasNext() && i < monopolyBoard.length) {
                 // Seleccionamos accion segun el type
-
-                if (idBox == i && type.equals("Start")) {
+                String boxRow = sc.nextLine();
+                String[] boxData = boxRow.split("-");
+                int idBox = Integer.parseInt(boxData[0]);
+                String type = boxData[1];
+                if (type.equals("Start")) {
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
-                } else if (idBox == i && type.equals("Comucard")) {
+                } else if (type.equals("Comucard")) {
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("ChanceCard")) {
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("TaxBox")) {
-                    String typeOfTax = boxData[2];
-                    monopolyBoard[i] = new Box(idBox, type);
+                    String typeOfTax = boxData[ 2];
+                    monopolyBoard[i] = new TaxBox(idBox, type, typeOfTax);
                     i++;
 /*
                     if (typeOfTax.equals("incomeTax")) {
@@ -49,12 +46,11 @@
                     } else { // Parking Free (Get all the taxes)
 
                     }
-
  */
                 } else if (idBox == i && type.equals("Station")) {
-                    monopolyBoard[i] = new Box(idBox, type);
+                    String stationName = boxData[2];
+                    monopolyBoard[i] = new StationBox(idBox, type, stationName);
                     i++;
-
                 } else if (idBox == i && type.equals("JailBox")) {
                     String typeJail = boxData[2];
                     monopolyBoard[i] = new Box(idBox, type);
@@ -67,21 +63,31 @@
                     }
 */
                 } else if (idBox == i && type.equals("Services")) {
-                    monopolyBoard[i] = new Box(idBox, type);
+                    String typeOfServices = boxData[2];
+                    monopolyBoard[i] = new ServicesBox(idBox, type, typeOfServices);
                     i++;
                 } else if (idBox == i && type.equals("Property")) { // Property
-                    monopolyBoard[i] = new Box(idBox, type);
-                    i++;
-                    System.out.println(idBox );
                     String name = boxData[2];
-                    System.out.println(name);
                     String color = boxData[3];
                     int price = Integer.parseInt(boxData[4]);
                     boolean isMortgaged = Boolean.parseBoolean(boxData[5]);
+                    String propietary = boxData[6];
+                    monopolyBoard[i] = new PropertyBox(idBox, type, name, color, price, isMortgaged, propietary);
+                    i++;
                 }
             }
-System.out.println(Arrays.toString(monopolyBoard));
+            /* ESTO PARA IMPRIMIR EL TABLERO!!
+
+                         for (int j = 0; j < monopolyBoard.length; j++) {
+                System.out.println(monopolyBoard[j].toString());1
+            }
+            */
+            return monopolyBoard;
         }
-
-
+        // Method to return the Box type, to work it out with the ActionsOnLand
+        public static Box getTypeOfBox(int pos) throws FileNotFoundException {
+            Box[] monopolyBoard = ReadBoxBoard.readTxt();
+            return monopolyBoard[pos];
+        }
     }
+

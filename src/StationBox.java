@@ -1,28 +1,25 @@
 /*
- * 24/3/22
+ * 26/3/22
  *
  * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
  *
  * Class to define the tax boxes
  *
  */
-
-public class TaxBox extends Box {
-    String typeOfTax;
-
+public class StationBox extends Box {
+    String stationName;
 
     // Constructor
-        public TaxBox(int idBox, String typeOfBox, String typeOfTax) {
-            super(idBox, typeOfBox);
-            this.typeOfTax = typeOfBox;
+    public StationBox(int idBox, String typeOfBox ,String stationName) {
+        super(idBox, typeOfBox);
+        this.stationName = stationName;
     }
-
 
     @Override
     public String toString() {
         return
                 "idBox = " + idBox +
                         " -- > type = " + type +
-                            " -- > typeOfTax = " + typeOfTax;
+                        " -- > stationName = " + stationName;
     }
 }

@@ -7,25 +7,33 @@
  *
  */
 
+import java.util.Objects;
+
 public class Box {
-    private int index;
-    private String type;
+    protected static int idBox;
+    protected String type;
+
+    // Constructor
+    public Box() {
+        this.idBox = 0;
+        this.type = "";
+    }
 
 
     // Constructor
-    public Box(int index, String type) {
-        this.index = index;
+    public Box(int idBox, String type) {
+        this.idBox = idBox;
         this.type = type;
     }
 
 // Getters y setters
 
-    public int getIndex() {
-        return index;
+    public static int getidBox() {
+        return idBox;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setidBox(int idBox) {
+        this.idBox = idBox;
     }
 
     public String getType() {
@@ -35,9 +43,30 @@ public class Box {
     public void setType(String type) {
         this.type = type;
     }
+
+
+    // Metodos de cada type
+
+//
+
+    @Override
+    public String toString() {
+        return
+                "idBox = " + idBox +
+                        " -- > type = " + type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Box box = (Box) o;
+        return idBox == box.idBox && Objects.equals(type, box.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idBox, type);
+    }
 }
-
-     // Metodos de cada type
-     
-
 

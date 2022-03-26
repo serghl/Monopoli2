@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static com.ibm.jvm.dtfjview.Version.getName;
@@ -11,7 +12,7 @@ import static com.ibm.jvm.dtfjview.Version.getName;
  *
  */
 public class ActionsOnTurn {
-                public static void turn(Player player) {
+                public static void turn(Player player) throws FileNotFoundException {
                         boolean found = false;
                         int choice;
                         Scanner s = new Scanner(System.in);
@@ -26,12 +27,12 @@ public class ActionsOnTurn {
                                                 System.out.println("Has sacado un : " + roll );
                                                 int newPos = Player.getPos() + roll;
                                                 System.out.println("Te mueves a la casilla : " + newPos );
-                                                Player.setPos(newPos);
-                                                ActionsOnLand.land(newPos);
+                                                player.setPos(newPos);
+                                                ActionsOnLand.land(player, newPos);
                                                 found = true;
                                                 break;
                                         case 2:
-                                                System.out.println("Muestra una lista de las propiedades");
+                                                player.showProperties();
                                                 found = false;
                                                 break;
                                         case 3:

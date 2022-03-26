@@ -7,14 +7,23 @@
  *
  */
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 
 public class MonopolyMain {
 
     public static void main(String[] args) throws FileNotFoundException {
 
         Player p1 = new Player("Sergio",1500,0,false);
+
         ReadBoxBoard b1 = new ReadBoxBoard();
-        readBoxBoard(b1);
+
+
+        ReadBoxBoard.readTxt();
+
+        ActionsOnTurn.turn(p1);
+        ActionsOnTurn.turn(p1);
+        ActionsOnTurn.turn(p1);
+        ActionsOnTurn.turn(p1);
         ActionsOnTurn.turn(p1);
         ActionsOnTurn.turn(p1);
         ActionsOnTurn.turn(p1);
