@@ -10,7 +10,7 @@
 import java.util.Objects;
 
 public class Box {
-    protected static int idBox;
+    protected int idBox;
     protected String type;
 
     // Constructor
@@ -28,8 +28,8 @@ public class Box {
 
 // Getters y setters
 
-    public static int getidBox() {
-        return idBox;
+    public int getidBox() {
+        return this.idBox;
     }
 
     public void setidBox(int idBox) {

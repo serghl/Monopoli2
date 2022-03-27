@@ -13,22 +13,16 @@ public class MonopolyMain {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        Player p1 = new Player("Sergio",1500,0,false);
+        // Player p1 = new Player("Sergio",1500,0,false);
 
-        ReadBoxBoard b1 = new ReadBoxBoard();
+        // ReadBoxBoard b1 = new ReadBoxBoard();
+        // boolean found = false;
 
-
-        ReadBoxBoard.readTxt();
-
-        ActionsOnTurn.turn(p1);
-        ActionsOnTurn.turn(p1);
-        ActionsOnTurn.turn(p1);
-        ActionsOnTurn.turn(p1);
-        ActionsOnTurn.turn(p1);
-        ActionsOnTurn.turn(p1);
-        ActionsOnTurn.turn(p1);
-
-
+        //ReadBoxBoard.readTxt();
+        //while (!found) {
+        //    ActionsOnTurn.turn(p1);
+        //}
+        NewGame.game();
     }
 
 

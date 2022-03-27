@@ -17,6 +17,13 @@ public class TaxBox extends Box {
             this.typeOfTax = typeOfBox;
     }
 
+    public String getTypeOfTax() {
+        return typeOfTax;
+    }
+
+    public void setTypeOfTax(String typeOfTax) {
+        this.typeOfTax = typeOfTax;
+    }
 
     @Override
     public String toString() {

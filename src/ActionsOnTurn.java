@@ -1,3 +1,4 @@
+import javax.sound.midi.Soundbank;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -25,7 +26,13 @@ public class ActionsOnTurn {
                                         case 1:
                                                 int roll = Dice.rollDice();
                                                 System.out.println("Has sacado un : " + roll );
-                                                int newPos = Player.getPos() + roll;
+                                                int newPos = player.getPos() + roll;
+                                                // Esto para dar la vuelta al tablero??
+                                                if (newPos > 39) {
+                                                        newPos = player.getPos() + roll - 40;
+                                                        System.out.println("Pasas por la casilla de salida, recibes 200!");
+                                                        player.receive(200);
+                                                }
                                                 System.out.println("Te mueves a la casilla : " + newPos );
                                                 player.setPos(newPos);
                                                 ActionsOnLand.land(player, newPos);

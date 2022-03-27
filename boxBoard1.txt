@@ -1,9 +1,9 @@
 0-Start
-1-Property-Marron1-Brown1-60-false-"null"
+1-Property-Marron1-Brown1-60-false-null
 2-Comucard
-3-Property-Marron2-Brown2-60-false-"null"
+3-Property-Marron2-Brown2-60-false-null
 4-TaxBox-incomeTax
-5-Station-Station1
+5-Station-Estacion1-null-200
 6-Property-Blanco1-White1-100-false-null
 7-ChanceCard
 8-Property-Blanco2-White2-100-false-null
@@ -13,7 +13,7 @@
 12-Services-Electric
 13-Property-Rosa2-Pink2-140-false-null
 14-Property-Rosa3-Pink3-160-false-null
-15-Station-Station2
+15-Station-Station2-null-200
 16-Property-Naranja1-Orange1-180-false-null
 17-Comucard
 18-Property-Naranja2-Orange2-180-false-null
@@ -23,7 +23,7 @@
 22-ChanceCard
 23-Property-Rojo2-Red2-220-false-null
 24-Property-Rojo3-Red3-240-false-null
-25-Station-Station3
+25-Station-Station3-null-200
 26-Property-Amarillo1-Yellow1-260-false-null
 27-Property-Amarillo2-Yellow2-260-false-null
 28-Services-Water
@@ -33,7 +33,7 @@
 32-Property-Verde2-Green2-300-false-null
 33-Comucard
 34-Property-Verde3-Green3-320-false-null
-35-Station-Station4
+35-Station-Station4-null-200
 36-ChanceCard
 37-Property-Azul1-Blue1-350-false-null
 38-TaxBox-SuperTax

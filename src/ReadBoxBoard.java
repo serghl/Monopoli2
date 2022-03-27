@@ -22,46 +22,34 @@
             while (sc.hasNext() && i < monopolyBoard.length) {
                 // Seleccionamos accion segun el type
                 String boxRow = sc.nextLine();
+                // Almacenamos los datos del .txt en un vector de Strings
                 String[] boxData = boxRow.split("-");
                 int idBox = Integer.parseInt(boxData[0]);
                 String type = boxData[1];
-                if (type.equals("Start")) {
+                if (idBox == i && type.equals("Start")) {
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
-                } else if (type.equals("Comucard")) {
+                } else if (idBox == i && type.equals("Comucard")) {
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("ChanceCard")) {
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("TaxBox")) {
-                    String typeOfTax = boxData[ 2];
+                    String typeOfTax = boxData[2];
                     monopolyBoard[i] = new TaxBox(idBox, type, typeOfTax);
                     i++;
-/*
-                    if (typeOfTax.equals("incomeTax")) {
-
-                    } else if (typeOfTax.equals("SuperTax")) {
-
-                    } else { // Parking Free (Get all the taxes)
-
-                    }
- */
                 } else if (idBox == i && type.equals("Station")) {
                     String stationName = boxData[2];
-                    monopolyBoard[i] = new StationBox(idBox, type, stationName);
+                    String propietary = boxData[3];
+                    int price = Integer.parseInt(boxData[4]);
+                    monopolyBoard[i] = new StationBox(idBox, type, stationName, propietary, price);
                     i++;
                 } else if (idBox == i && type.equals("JailBox")) {
                     String typeJail = boxData[2];
                     monopolyBoard[i] = new Box(idBox, type);
                     i++;
-                    /*
-                    if (typeJail.equals("JailBox")) {
-                        System.out.printf("Tranqui, sólo estás de paso");
-                    } else {
-                        System.out.printf("Pal Talego");
-                    }
-*/
+
                 } else if (idBox == i && type.equals("Services")) {
                     String typeOfServices = boxData[2];
                     monopolyBoard[i] = new ServicesBox(idBox, type, typeOfServices);
@@ -76,12 +64,13 @@
                     i++;
                 }
             }
-            /* ESTO PARA IMPRIMIR EL TABLERO!!
-
+            /*
+             //ESTO PARA IMPRIMIR EL TABLERO!!
                          for (int j = 0; j < monopolyBoard.length; j++) {
-                System.out.println(monopolyBoard[j].toString());1
+                System.out.println(monopolyBoard[j].toString());
             }
-            */
+*/
+
             return monopolyBoard;
         }
         // Method to return the Box type, to work it out with the ActionsOnLand
