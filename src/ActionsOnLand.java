@@ -14,7 +14,11 @@ public class ActionsOnLand {
         Box landBox = ReadBoxBoard.getTypeOfBox(pos);
         Scanner s = new Scanner(System.in);
         int choice;
+
+        // -------------------------
         // Options for a PROPERTYBOX
+        // -------------------------
+
         if (landBox instanceof PropertyBox) {
             // First of all check if does not have an owner
             if (((PropertyBox) landBox).getPropietary().equals("null")) {
@@ -41,7 +45,11 @@ public class ActionsOnLand {
                             + ((PropertyBox) landBox).getPropietary());
                 }
             }
+
+            // ------------------
             // OPTIONS FOR A STATION
+            // ------------------
+
         } else if (landBox instanceof StationBox) {
             // First of all check if does not have an owner
             if (((StationBox) landBox).getPropietary().equals("null")) {
@@ -51,7 +59,6 @@ public class ActionsOnLand {
                 choice = s.nextInt();
                 // Execute the buy, checking first if enough money for it
                 if (choice == 1 && player.getMoneyLeft() >= ((StationBox) landBox).getPrice()) {
-                    System.out.println(landBox);
                     // Pay , discount money from player
                     player.pay(((StationBox) landBox).getPrice());
                     // Add the property to his properties collection
@@ -66,15 +73,35 @@ public class ActionsOnLand {
                 System.out.println("Has caido en " + ((StationBox) landBox).getStationName() + " y es propiedad de :"
                         + ((StationBox) landBox).getPropietary());
             }
+
+            // ------------------
             // OPTIONS FOR TAXBOX
-            // TODO (esperando por el pot)
+            // ------------------
         } else if (landBox instanceof TaxBox) {
             if (((TaxBox) landBox).getTypeOfTax().equals("incomeTax")) {
+                player.pay(200);
+                NewGame.addPot(200);
                 System.out.println("Has caido en Income Tax! Pagas 200!");
             } else if (((TaxBox) landBox).getTypeOfTax().equals("SuperTax")) {
+                player.pay(100);
+                NewGame.addPot(100);
                 System.out.println("Has caido en Luxury Tax! Pagas 100!");
             } else if (((TaxBox) landBox).getTypeOfTax().equals("ParkingFree")) {
-                System.out.println("Free Parking!! Te llevas el bote de :");
+                System.out.println("Free Parking!! Te llevas el bote de : " + NewGame.getPot() +"!!");
+                player.receive(NewGame.getPot());
+                NewGame.resetPot();
+            }
+
+            // ------------------
+            // OPTIONS FOR JAILBOX
+            // ------------------
+
+        } else if (landBox instanceof JailBox) {
+            if (((JailBox) landBox).getTypeOfJail().equals("JailBox")) {
+                System.out.println("Has caído en la carcel, pero tranquil@, sólo estás de paso!");
+            } else {
+                System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
+                // player.toJail();
             }
         }
     }

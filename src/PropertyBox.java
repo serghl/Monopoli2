@@ -11,17 +11,15 @@ public class PropertyBox extends Box {
     String name;
     String color;
     int price;
-    boolean isMortgaged;
     String propietary;
 
     // Constructor
-    public PropertyBox(int idBox, String typeOfBox , String name, String color, int price, boolean isMortgaged,
+    public PropertyBox(int idBox, String typeOfBox, String name, String color, int price,
                        String propietary) {
         super(idBox, typeOfBox);
         this.name = name;
         this.color = color;
         this.price = price;
-        this.isMortgaged = isMortgaged;
         this.propietary = propietary;
     }
 
@@ -49,13 +47,6 @@ public class PropertyBox extends Box {
         this.price = price;
     }
 
-    public boolean isMortgaged() {
-        return isMortgaged;
-    }
-
-    public void setMortgaged(boolean mortgaged) {
-        isMortgaged = mortgaged;
-    }
 
     public String getPropietary() {
         return this.propietary;
@@ -73,7 +64,6 @@ public class PropertyBox extends Box {
                         " -- > name = " + name +
                         " -- > color = " + color +
                         " -- > price = " + price +
-                        " -- > isMortgaged = " + isMortgaged +
                         " -- > propietary = " + propietary;
     }
 

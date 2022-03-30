@@ -8,15 +8,13 @@
  */
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 
 public class Player {
 
  private String name;
  private int moneyLeft;
  private static int pos;
- private boolean isBroken;
+ private int turnsJail;
  private ArrayList<Box> properties;
 
  // Constructores
@@ -27,11 +25,12 @@ public class Player {
  }
  
  // Main Constructor
- public Player(String name, int moneyLeft, int pos, boolean isBroken) {
+ public Player(String name, int moneyLeft, int pos) {
   this.name = name;
   this.moneyLeft = moneyLeft;
   this.pos = pos;
-  this.isBroken = isBroken;
+  this.turnsJail = 0;
+
   this.properties = new ArrayList<Box>();
  }
 
@@ -57,16 +56,16 @@ public class Player {
   return pos;
  }
 
- public static void setPos(int pos) {
-  Player.pos = pos;
+ public void setPos(int pos) {
+  this.pos = pos;
  }
 
- public boolean getIsBroken() {
-  return isBroken;
+ public int getTurnsJail() {
+  return turnsJail;
  }
 
- public void setIsBroken(Boolean isBroken) {
-  this.isBroken = isBroken;
+ public void setTurnsJail(int turnsJail) {
+  this.turnsJail = turnsJail;
  }
 
  public ArrayList<Box> getProperties() {
@@ -81,9 +80,9 @@ public class Player {
 
  @Override
  public String toString() {
-  return  "moneyLeft = " + moneyLeft +
-          " - pos = " + pos +
-          " - isBroken = " + isBroken
+  return  "Name : " + this.name +
+          " - MoneyLeft = " + this.moneyLeft +
+          " - Position = " + this.pos
           ;
  }
 
@@ -98,6 +97,7 @@ public class Player {
  public void showProperties() {
   System.out.println("Estas son tus propiedades : ");
   for (int i = 0; i < properties.size(); i++)
+   // TODO PREGUNTAR AQUI COMO TENER ACCESO AL NOMBRE DE LA CLASE HIJA
   System.out.println(properties.get(i).getidBox() + "-" + properties.get(i).getType());
  }
 
@@ -109,7 +109,15 @@ public class Player {
    System.out.println("No tienes suficiente lana para esto!");
   }
 }
+// TODO CONSULTA CON RAFEL SI ES MAS EFICIENTE CONSULTAR UN ATRIBUTO O UN METODO
 
+ // Get player in Jail
+/*
+ public void toJail() {
+       setPos(10);
+       setTurnsJail(3);
+ }
+*/
  // Receive an amount of money
 
  public void receive(int amount) {

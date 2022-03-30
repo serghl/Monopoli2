@@ -46,10 +46,9 @@
                     monopolyBoard[i] = new StationBox(idBox, type, stationName, propietary, price);
                     i++;
                 } else if (idBox == i && type.equals("JailBox")) {
-                    String typeJail = boxData[2];
-                    monopolyBoard[i] = new Box(idBox, type);
+                    String typeOfJail = boxData[2];
+                    monopolyBoard[i] = new JailBox(idBox, type, typeOfJail);
                     i++;
-
                 } else if (idBox == i && type.equals("Services")) {
                     String typeOfServices = boxData[2];
                     monopolyBoard[i] = new ServicesBox(idBox, type, typeOfServices);
@@ -58,9 +57,9 @@
                     String name = boxData[2];
                     String color = boxData[3];
                     int price = Integer.parseInt(boxData[4]);
-                    boolean isMortgaged = Boolean.parseBoolean(boxData[5]);
-                    String propietary = boxData[6];
-                    monopolyBoard[i] = new PropertyBox(idBox, type, name, color, price, isMortgaged, propietary);
+                    // boolean isMortgaged = Boolean.parseBoolean(boxData[5]);
+                    String propietary = boxData[5];
+                    monopolyBoard[i] = new PropertyBox(idBox, type, name, color, price, propietary);
                     i++;
                 }
             }

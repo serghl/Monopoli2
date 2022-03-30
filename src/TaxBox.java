@@ -14,7 +14,7 @@ public class TaxBox extends Box {
     // Constructor
         public TaxBox(int idBox, String typeOfBox, String typeOfTax) {
             super(idBox, typeOfBox);
-            this.typeOfTax = typeOfBox;
+            this.typeOfTax = typeOfTax;
     }
 
     public String getTypeOfTax() {

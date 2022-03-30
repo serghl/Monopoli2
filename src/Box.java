@@ -19,7 +19,6 @@ public class Box {
         this.type = "";
     }
 
-
     // Constructor
     public Box(int idBox, String type) {
         this.idBox = idBox;
