@@ -65,6 +65,7 @@ public class NewGame {
         ---------------- SISTEMA DE TURNOS ---------------------
         --------------------------------------------------------
          */
+
         int turnCounter = 1;
         while (!endGame) {
             System.out.println("TURNO - " + turnCounter + " BOTE : " +getPot());

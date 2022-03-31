@@ -1,8 +1,6 @@
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-
 /*
  * 24/2/2
  *
@@ -51,17 +49,19 @@ public class ActionsOnTurn {
                                         */
 
                         while(!found) {
-                                System.out.printf("\n Elige una opcion:\n 1 - Tira dados \n 2 - Lista de propiedades \n 3 - Info \n");
+                                System.out.print("\n Elige una opcion:\n 1 - Tira dados \n 2 - Lista de propiedades \n 3 - Info \n");
                                 choice = s.nextInt();
                                 switch(choice) {
                                         case 1:
                                                 // TODO por que cojones me cambia la pos de todos? Tendra que ver con el bug de la asignacion de propiedades tambien??
+                                                // Esto debe venir desde la asignacion en newGame del array de players?
+                                                // Me cambia la clase player y no el atributo del player en si
                                                 int roll = Dice.rollDice();
                                                 System.out.println("Has sacado un : " + roll);
-                                                int newPos = currPlayer.getPos() + roll;
+                                                int newPos = Player.getPos() + roll;
                                                 // Esto para dar la vuelta al tablero
                                                 if (newPos > 39) {
-                                                        newPos = currPlayer.getPos() + roll - 40;
+                                                        newPos = Player.getPos() + roll - 40;
                                                         System.out.println("Pasas por la casilla de salida, recibes 200!");
                                                         currPlayer.receive(200);
                                                 }
@@ -72,16 +72,13 @@ public class ActionsOnTurn {
                                                 break;
                                         case 2:
                                                 currPlayer.showProperties();
-                                                found = false;
                                                 break;
                                         case 3:
-                                                System.out.println(currPlayer.toString());
-                                                found = false;
+                                                System.out.println(currPlayer);
                                                 break;
                                                 // TODO FALTARÁ LA OPCION DE CONSTRUIR?
                                         default:
-                                                System.out.println("Elige una opcion válida por favor!");
-                                                found = false;
+                                                System.out.println("Elige una opción válida por favor!");
                                                 break;
                                 }
                         }

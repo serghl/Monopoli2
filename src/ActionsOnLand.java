@@ -38,13 +38,15 @@ public class ActionsOnLand {
                     // If not enough money
                 } else if (choice == 1 && player.getMoneyLeft() < ((PropertyBox) landBox).getPrice()) {
                     System.out.println("No tienes suficiente dinero para esta propiedad!");
-                    // If the property is owned by a player
-                } else {
+
+                }
+                // If the property is owned by a player
+            } else if (!((PropertyBox) landBox).getPropietary().equals("null")){
                     // Informar de quien es la propiedad
                     System.out.println("Has caido en " + ((PropertyBox) landBox).getName() + " y es propiedad de :"
                             + ((PropertyBox) landBox).getPropietary());
                 }
-            }
+
 
             // ------------------
             // OPTIONS FOR A STATION
@@ -68,7 +70,7 @@ public class ActionsOnLand {
                     System.out.println("Tuya, añadida a tus propiedades!");
                 }
                 // If the property is owned by a player
-            } else {
+            } else if (!((StationBox) landBox).getPropietary().equals("null")){
                 // Informar de quien es la propiedad
                 System.out.println("Has caido en " + ((StationBox) landBox).getStationName() + " y es propiedad de :"
                         + ((StationBox) landBox).getPropietary());

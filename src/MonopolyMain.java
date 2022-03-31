@@ -9,7 +9,8 @@
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
-public class MonopolyMain {
+public class
+        MonopolyMain {
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -24,6 +25,4 @@ public class MonopolyMain {
         //}
         NewGame.game();
     }
-
-
 }
