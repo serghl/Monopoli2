@@ -53,15 +53,12 @@ public class ActionsOnTurn {
                                 choice = s.nextInt();
                                 switch(choice) {
                                         case 1:
-                                                // TODO por que cojones me cambia la pos de todos? Tendra que ver con el bug de la asignacion de propiedades tambien??
-                                                // Esto debe venir desde la asignacion en newGame del array de players?
-                                                // Me cambia la clase player y no el atributo del player en si
                                                 int roll = Dice.rollDice();
                                                 System.out.println("Has sacado un : " + roll);
-                                                int newPos = Player.getPos() + roll;
+                                                int newPos = currPlayer.getPos() + roll;
                                                 // Esto para dar la vuelta al tablero
                                                 if (newPos > 39) {
-                                                        newPos = Player.getPos() + roll - 40;
+                                                        newPos = currPlayer.getPos() + roll - 40;
                                                         System.out.println("Pasas por la casilla de salida, recibes 200!");
                                                         currPlayer.receive(200);
                                                 }

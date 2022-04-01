@@ -13,7 +13,7 @@ public class Player {
 
  private String name;
  private int moneyLeft;
- private static int pos;
+ private int pos;
  private int turnsJail;
  private ArrayList<Box> properties;
 
@@ -52,8 +52,8 @@ public class Player {
   this.moneyLeft = moneyLeft;
  }
 
- public static int getPos() {
-  return pos;
+ public int getPos() {
+  return this.pos;
  }
 
  public void setPos(int pos) {

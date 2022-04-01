@@ -10,8 +10,8 @@
 import java.util.Objects;
 
 public class Box {
-    protected int idBox;
-    protected String type;
+    int idBox;
+    String type;
 
     // Constructor
     public Box() {
