@@ -7,9 +7,9 @@
  *
  */
 
-public class StartBox {
-    public StartBox(int idBox, String type) {
-
+public class StartBox extends Box {
+    public StartBox(int idBox, String typeOfBox) {
+        super(idBox, typeOfBox);
     }
 
     public static void startCross(Player player) {

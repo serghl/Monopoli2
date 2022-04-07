@@ -27,13 +27,13 @@
                 int idBox = Integer.parseInt(boxData[0]);
                 String type = boxData[1];
                 if (idBox == i && type.equals("Start")) {
-                    monopolyBoard[i] = new Box(idBox, type);
+                    monopolyBoard[i] = new StartBox(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("Comucard")) {
-                    monopolyBoard[i] = new Box(idBox, type);
+                    monopolyBoard[i] = new ComuBox(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("ChanceCard")) {
-                    monopolyBoard[i] = new Box(idBox, type);
+                    monopolyBoard[i] = new ChanceBox(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("TaxBox")) {
                     String typeOfTax = boxData[2];

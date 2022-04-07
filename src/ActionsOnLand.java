@@ -38,7 +38,6 @@ public class ActionsOnLand {
                     // If not enough money
                 } else if (choice == 1 && player.getMoneyLeft() < ((PropertyBox) landBox).getPrice()) {
                     System.out.println("No tienes suficiente dinero para esta propiedad!");
-
                 }
                 // If the property is owned by a player
             } else if (!((PropertyBox) landBox).getPropietary().equals("null")) {
