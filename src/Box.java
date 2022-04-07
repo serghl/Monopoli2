@@ -8,8 +8,8 @@
  */
 
 import java.util.Objects;
-
-public class Box {
+// TODO crear la clase startbox y añadirla al conjunto, para que no me peten estos 3 errores
+public abstract class Box {
     int idBox;
     String type;
 
