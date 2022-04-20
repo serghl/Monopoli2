@@ -7,20 +7,21 @@
   *
   */
 
-public class ServicesBox extends Box {
-    String typeOfServices;
+ public class ServicesBox extends Box {
+     String typeOfServices;
 
-    // Constructor
-    public ServicesBox (int idBox, String typeOfBox ,String typeOfServices) {
-        super(idBox, typeOfBox);
-        this.typeOfServices = typeOfServices;
-    }
-    @Override
-    public String toString() {
-        return
-                "idBox = " + idBox +
-                        " -- > type = " + type +
-                        " -- > typeOfServices = " + typeOfServices;
-    }
+     // Constructor
+     public ServicesBox(int idBox, String typeOfBox, String typeOfServices) {
+         super(idBox, typeOfBox);
+         this.typeOfServices = typeOfServices;
+     }
 
-}
+     @Override
+     public String toString() {
+         return
+                 "idBox = " + idBox +
+                         " -- > type = " + type +
+                         " -- > typeOfServices = " + typeOfServices;
+     }
+
+ }

@@ -68,9 +68,9 @@ public class NewGame {
 
         int turnCounter = 1;
         while (!endGame) {
-            System.out.println("TURNO - " + turnCounter + " BOTE : " +getPot());
+            System.out.println("TURNO - " + turnCounter + " BOTE : " + getPot());
             for (int i = 0; i < arrayPlayers.length; i++) {
-                    ActionsOnTurn.turn(arrayPlayers[i]);
+                ActionsOnTurn.turn(arrayPlayers[i]);
             }
             turnCounter++;
         }

@@ -6,11 +6,12 @@
  * Method to read the .txt board file
  *
  */
+
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class
-        MonopolyMain {
+MonopolyMain {
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -23,6 +24,7 @@ public class
         //while (!found) {
         //    ActionsOnTurn.turn(p1);
         //}
+
         NewGame.game();
     }
 }

@@ -11,7 +11,7 @@ public class JailBox extends Box {
     String typeOfJail;
 
     // Constructor
-    public JailBox(int idBox, String typeOfBox , String typeOfJail) {
+    public JailBox(int idBox, String typeOfBox, String typeOfJail) {
         super(idBox, typeOfBox);
         this.typeOfJail = typeOfJail;
     }

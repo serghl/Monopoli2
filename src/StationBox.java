@@ -12,7 +12,7 @@ public class StationBox extends Box {
     private int price;
 
     // Constructor
-    public StationBox(int idBox, String type ,String stationName, String propietary, int price) {
+    public StationBox(int idBox, String type, String stationName, String propietary, int price) {
         super(idBox, type);
         this.stationName = stationName;
         this.propietary = propietary;
@@ -42,7 +42,6 @@ public class StationBox extends Box {
     public void setPropietary(String propietary) {
         this.propietary = propietary;
     }
-
 
 
     @Override

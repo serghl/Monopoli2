@@ -8,10 +8,10 @@
  */
 
 public class PropertyBox extends Box {
-    String name;
-    String color;
-    int price;
-    String propietary;
+    private String name;
+    private String color;
+    private int price;
+    protected String propietary;
 
     // Constructor
     public PropertyBox(int idBox, String typeOfBox, String name, String color, int price,
@@ -60,9 +60,9 @@ public class PropertyBox extends Box {
     public String toString() {
         return
                 "idBox = " + idBox +
-                        " -- > type = " + type +
+                       // " -- > type = " + type +
                         " -- > name = " + name +
-                        " -- > color = " + color +
+                       // " -- > color = " + color +
                         " -- > price = " + price +
                         " -- > propietary = " + propietary;
     }

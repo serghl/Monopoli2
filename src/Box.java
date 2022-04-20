@@ -9,7 +9,7 @@
 
 import java.util.Objects;
 
-public class Box {
+public abstract class Box {
     int idBox;
     String type;
 

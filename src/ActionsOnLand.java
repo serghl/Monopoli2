@@ -31,7 +31,7 @@ public class ActionsOnLand {
                     // Pay , discount money from player
                     player.pay(((PropertyBox) landBox).getPrice());
                     // Add the property to his properties collection
-                    player.add(landBox);
+                    player.add((PropertyBox) landBox);
                     // Change the property to Player's name
                     ((PropertyBox) landBox).setPropietary(player.getName());
                     System.out.println("Tuya, añadida a tus propiedades!");
@@ -41,12 +41,11 @@ public class ActionsOnLand {
 
                 }
                 // If the property is owned by a player
-            } else if (!((PropertyBox) landBox).getPropietary().equals("null")){
-                    // Informar de quien es la propiedad
-                    System.out.println("Has caido en " + ((PropertyBox) landBox).getName() + " y es propiedad de :"
-                            + ((PropertyBox) landBox).getPropietary());
-                }
-
+            } else if (!((PropertyBox) landBox).getPropietary().equals("null")) {
+                // Informar de quien es la propiedad
+                System.out.println("Has caido en " + ((PropertyBox) landBox).getName() + " y es propiedad de :"
+                        + ((PropertyBox) landBox).getPropietary());
+            }
 
             // ------------------
             // OPTIONS FOR A STATION
@@ -64,13 +63,15 @@ public class ActionsOnLand {
                     // Pay , discount money from player
                     player.pay(((StationBox) landBox).getPrice());
                     // Add the property to his properties collection
-                    player.add(landBox);
+                    // TODO crear una nueva clase aqui, hija de propiedades que se pueden poseer?
+                    // player.add((SationBox) landBox);
                     // Change the property to Player's name
                     ((StationBox) landBox).setPropietary(player.getName());
                     System.out.println("Tuya, añadida a tus propiedades!");
                 }
                 // If the property is owned by a player
-            } else if (!((StationBox) landBox).getPropietary().equals("null")){
+                // TODO ESTO NO FUNCIONA; NO RECONOCE PROPIETARIOS
+            } else if (!((StationBox) landBox).getPropietary().equals("null")) {
                 // Informar de quien es la propiedad
                 System.out.println("Has caido en " + ((StationBox) landBox).getStationName() + " y es propiedad de :"
                         + ((StationBox) landBox).getPropietary());
@@ -89,7 +90,7 @@ public class ActionsOnLand {
                 NewGame.addPot(100);
                 System.out.println("Has caido en Luxury Tax! Pagas 100!");
             } else if (((TaxBox) landBox).getTypeOfTax().equals("ParkingFree")) {
-                System.out.println("Free Parking!! Te llevas el bote de : " + NewGame.getPot() +"!!");
+                System.out.println("Free Parking!! Te llevas el bote de : " + NewGame.getPot() + "!!");
                 player.receive(NewGame.getPot());
                 NewGame.resetPot();
             }
@@ -105,7 +106,20 @@ public class ActionsOnLand {
                 System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
                 // player.toJail();
             }
+
+            // ------------------
+            // OPTIONS FOR COMMUCARDBOX
+            // ------------------
+
+        } else if (landBox instanceof ChanceCardBox) {
+            if (((JailBox) landBox).getTypeOfJail().equals("JailBox")) {
+                System.out.println("Has caído en la carcel, pero tranquil@, sólo estás de paso!");
+            } else {
+                System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
+                // player.toJail();
+            }
         }
+
     }
 }
 
