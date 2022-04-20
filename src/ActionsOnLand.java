@@ -31,21 +31,20 @@ public class ActionsOnLand {
                     // Pay , discount money from player
                     player.pay(((PropertyBox) landBox).getPrice());
                     // Add the property to his properties collection
-                    player.add((PropertyBox) landBox);
+                    player.add(landBox);
                     // Change the property to Player's name
                     ((PropertyBox) landBox).setPropietary(player.getName());
                     System.out.println("Tuya, añadida a tus propiedades!");
                     // If not enough money
                 } else if (choice == 1 && player.getMoneyLeft() < ((PropertyBox) landBox).getPrice()) {
                     System.out.println("No tienes suficiente dinero para esta propiedad!");
-
                 }
                 // If the property is owned by a player
             } else if (!((PropertyBox) landBox).getPropietary().equals("null")) {
                 // Informar de quien es la propiedad
-                System.out.println("Has caido en " + ((PropertyBox) landBox).getName() + " y es propiedad de :"
-                        + ((PropertyBox) landBox).getPropietary());
+                System.out.println("Has caido en " + ((PropertyBox) landBox).getName() + " y es propiedad de :" + ((PropertyBox) landBox).getPropietary());
             }
+
 
             // ------------------
             // OPTIONS FOR A STATION
@@ -54,8 +53,7 @@ public class ActionsOnLand {
         } else if (landBox instanceof StationBox) {
             // First of all check if does not have an owner
             if (((StationBox) landBox).getPropietary().equals("null")) {
-                System.out.println("Has caido en la estación de " + ((StationBox) landBox).getStationName() +
-                        " y no tiene dueño");
+                System.out.println("Has caido en la estación de " + ((StationBox) landBox).getStationName() + " y no tiene dueño");
                 System.out.println("Cuesta " + ((StationBox) landBox).getPrice() + ", quieres comprarla?(1-Y / 0-N)");
                 choice = s.nextInt();
                 // Execute the buy, checking first if enough money for it
@@ -63,18 +61,15 @@ public class ActionsOnLand {
                     // Pay , discount money from player
                     player.pay(((StationBox) landBox).getPrice());
                     // Add the property to his properties collection
-                    // TODO crear una nueva clase aqui, hija de propiedades que se pueden poseer?
-                    // player.add((SationBox) landBox);
+                    player.add(landBox);
                     // Change the property to Player's name
                     ((StationBox) landBox).setPropietary(player.getName());
                     System.out.println("Tuya, añadida a tus propiedades!");
                 }
                 // If the property is owned by a player
-                // TODO ESTO NO FUNCIONA; NO RECONOCE PROPIETARIOS
             } else if (!((StationBox) landBox).getPropietary().equals("null")) {
                 // Informar de quien es la propiedad
-                System.out.println("Has caido en " + ((StationBox) landBox).getStationName() + " y es propiedad de :"
-                        + ((StationBox) landBox).getPropietary());
+                System.out.println("Has caido en " + ((StationBox) landBox).getStationName() + " y es propiedad de :" + ((StationBox) landBox).getPropietary());
             }
 
             // ------------------
@@ -106,20 +101,7 @@ public class ActionsOnLand {
                 System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
                 // player.toJail();
             }
-
-            // ------------------
-            // OPTIONS FOR COMMUCARDBOX
-            // ------------------
-
-        } else if (landBox instanceof ChanceCardBox) {
-            if (((JailBox) landBox).getTypeOfJail().equals("JailBox")) {
-                System.out.println("Has caído en la carcel, pero tranquil@, sólo estás de paso!");
-            } else {
-                System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
-                // player.toJail();
-            }
         }
-
     }
 }
 

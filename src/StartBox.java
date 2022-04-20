@@ -8,10 +8,15 @@
  */
 
 public class StartBox extends Box {
+<<<<<<< HEAD
 
 
     public StartBox(int typeOfBox, String type) {
         super(typeOfBox, type);
+=======
+    public StartBox(int idBox, String typeOfBox) {
+        super(idBox, typeOfBox);
+>>>>>>> origin/main
     }
 
     public static void startCross(Player player) {
