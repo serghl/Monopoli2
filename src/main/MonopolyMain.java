@@ -1,4 +1,4 @@
-/*
+package main;/*
  * 24/2/22
  *
  * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
@@ -6,6 +6,8 @@
  * Method to read the .txt board file
  *
  */
+
+import misc.NewGame;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -15,14 +17,14 @@ MonopolyMain {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        // Player p1 = new Player("Sergio",1500,0,false);
+        // misc.Player p1 = new misc.Player("Sergio",1500,0,false);
 
-        // ReadBoxBoard b1 = new ReadBoxBoard();
+        // boxes.ReadBoxBoard b1 = new boxes.ReadBoxBoard();
         // boolean found = false;
 
-        //ReadBoxBoard.readTxt();
+        //boxes.ReadBoxBoard.readTxt();
         //while (!found) {
-        //    ActionsOnTurn.turn(p1);
+        //    misc.ActionsOnTurn.turn(p1);
         //}
 
         NewGame.game();

@@ -57,7 +57,7 @@ NULL           =================================
 2CIUSERARG               -javaagent:/snap/intellij-idea-community/352/lib/idea_rt.jar=37121:/snap/intellij-idea-community/352/bin
 2CIUSERARG               -Dfile.encoding=UTF-8
 2CIUSERARG               -Djava.class.path=/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/charsets.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/dtfj.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/dtfjview.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/traceformat.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/jce.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/jsse.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/resources.jar:/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/rt.jar:/home/furiante/Documents/WorkSpace/monopoli2/out/production/monopoly:/home/furiante/.m2/repository/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar
-2CIUSERARG               -Dsun.java.command=MonopolyMain
+2CIUSERARG               -Dsun.java.command=main.MonopolyMain
 2CIUSERARG               -Dsun.java.launcher=SUN_STANDARD
 2CIUSERARG               -Dsun.java.launcher.pid=15398
 NULL
@@ -1259,8 +1259,8 @@ NULL
 4XESTACKTRACE                at java/util/Scanner.readInput(Scanner.java:804)
 4XESTACKTRACE                at java/util/Scanner.findWithinHorizon(Scanner.java:1685)
 4XESTACKTRACE                at java/util/Scanner.nextLine(Scanner.java:1538)
-4XESTACKTRACE                at NewGame.game(NewGame.java:55)
-4XESTACKTRACE                at MonopolyMain.main(MonopolyMain.java:25)
+4XESTACKTRACE                at misc.NewGame.game(misc.NewGame.java:55)
+4XESTACKTRACE                at main.MonopolyMain.main(main.MonopolyMain.java:25)
 3XMTHREADINFO3           Native callstack:
 4XENATIVESTACK               (0x00007F0D19812422 [libj9prt29.so+0x26422])
 4XENATIVESTACK               (0x00007F0D19816773 [libj9prt29.so+0x2a773])
@@ -2540,10 +2540,10 @@ NULL           =================================
 2CLTEXTCLLOAD  		Loader java/lang/InternalAnonymousClassLoader(0x00000007FFF25650)
 2CLTEXTCLLOAD  		Loader sun/misc/Launcher$AppClassLoader(0x00000007FFF40518)
 3CLTEXTCLASS   			[LPlayer;(0x0000000000159600)
-3CLTEXTCLASS   			Player(0x0000000000158F00)
-3CLTEXTCLASS   			ReadBoxBoard(0x0000000000158C00)
-3CLTEXTCLASS   			NewGame(0x0000000000158600)
-3CLTEXTCLASS   			MonopolyMain(0x0000000000158100)
+3CLTEXTCLASS   			misc.Player(0x0000000000158F00)
+3CLTEXTCLASS   			boxes.ReadBoxBoard(0x0000000000158C00)
+3CLTEXTCLASS   			misc.NewGame(0x0000000000158600)
+3CLTEXTCLASS   			main.MonopolyMain(0x0000000000158100)
 3CLTEXTCLASS   			com/intellij/rt/execution/application/AppMainV2$1(0x0000000000157C00)
 3CLTEXTCLASS   			com/intellij/rt/execution/application/AppMainV2(0x0000000000157800)
 3CLTEXTCLASS   			com/intellij/rt/execution/application/AppMainV2$Agent(0x0000000000157000)

@@ -1,3 +1,7 @@
+package misc;
+
+import boxes.Box;
+
 /*
  * 24/2/22
  *

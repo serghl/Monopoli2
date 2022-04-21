@@ -1,6 +1,8 @@
-import javax.sound.midi.Soundbank;
+package misc;
+
+import boxes.ReadBoxBoard;
+
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*

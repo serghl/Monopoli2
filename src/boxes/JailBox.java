@@ -1,4 +1,4 @@
-/*
+package boxes;/*
  * 24/2/22
  *
  * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
@@ -6,6 +6,8 @@
  * Method to read the .txt board file
  *
  */
+
+import boxes.Box;
 
 public class JailBox extends Box {
     String typeOfJail;

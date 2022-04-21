@@ -1,4 +1,4 @@
-/*
+package misc;/*
  * 21/2/22
  *
  * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
@@ -6,6 +6,8 @@
  * Class to set up a player
  *
  */
+
+import boxes.Box;
 
 import java.util.ArrayList;
 

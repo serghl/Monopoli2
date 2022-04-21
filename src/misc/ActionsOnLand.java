@@ -1,3 +1,7 @@
+package misc;
+
+import boxes.*;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -32,7 +36,7 @@ public class ActionsOnLand {
                     player.pay(((PropertyBox) landBox).getPrice());
                     // Add the property to his properties collection
                     player.add(landBox);
-                    // Change the property to Player's name
+                    // Change the property to misc.Player's name
                     ((PropertyBox) landBox).setPropietary(player.getName());
                     System.out.println("Tuya, añadida a tus propiedades!");
                     // If not enough money
@@ -62,7 +66,7 @@ public class ActionsOnLand {
                     player.pay(((StationBox) landBox).getPrice());
                     // Add the property to his properties collection
                     player.add(landBox);
-                    // Change the property to Player's name
+                    // Change the property to misc.Player's name
                     ((StationBox) landBox).setPropietary(player.getName());
                     System.out.println("Tuya, añadida a tus propiedades!");
                 }
@@ -95,7 +99,7 @@ public class ActionsOnLand {
             // ------------------
 
         } else if (landBox instanceof JailBox) {
-            if (((JailBox) landBox).getTypeOfJail().equals("JailBox")) {
+            if (((JailBox) landBox).getTypeOfJail().equals("boxes.JailBox")) {
                 System.out.println("Has caído en la carcel, pero tranquil@, sólo estás de paso!");
             } else {
                 System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
