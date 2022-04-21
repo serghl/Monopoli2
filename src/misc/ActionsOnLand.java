@@ -1,6 +1,7 @@
 package misc;
 
 import boxes.*;
+import sun.awt.X11.XSystemTrayPeer;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

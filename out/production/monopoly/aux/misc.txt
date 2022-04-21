@@ -1,0 +1,8 @@
+CHEQUEAR 
+
+1 - Preguntar como hago para hacer un .equals , en los if del misc.ActionsOnLand (fila 17)
+Supongo que tengo que reescribir los equals de cada hijo de la clase box(herencias)??
+Basicamente, que al acceder a las propiedades del tipo de boxes.Box que sea, pueda acceder a los métodos
+de la clase hija
+
+2 - Porque cojones me peta en el siguiente if en optiononland, puede ser el tema que me había dicho rafel del buffer del scanner?
