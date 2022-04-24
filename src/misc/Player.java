@@ -17,6 +17,8 @@ public class Player {
     private int moneyLeft;
     private int pos;
     private int turnsJail;
+
+    private int freeJailCard; // TODO Aqui por ejemplo puede ser private??
     private ArrayList<Box> properties;
 
     // Constructores
@@ -32,7 +34,7 @@ public class Player {
         this.moneyLeft = moneyLeft;
         this.pos = pos;
         this.turnsJail = 0;
-
+        this.freeJailCard = 0;
         this.properties = new ArrayList<Box>();
     }
 
@@ -78,6 +80,13 @@ public class Player {
         this.properties = properties;
     }
 
+    public int getFreeJailCard() {
+        return freeJailCard;
+    }
+
+    public void setFreeJailCard(int freeJailCard) {
+        this.freeJailCard = freeJailCard;
+    }
     // To String
 
     @Override

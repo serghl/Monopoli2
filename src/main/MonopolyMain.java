@@ -12,6 +12,8 @@ import misc.NewGame;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
+import static boxes.ChanceCardBox.chance;
+
 public class
 MonopolyMain {
 
@@ -26,7 +28,7 @@ MonopolyMain {
         //while (!found) {
         //    misc.ActionsOnTurn.turn(p1);
         //}
-
+        //System.out.println(Arrays.toString(chance()));
         NewGame.game();
     }
 }

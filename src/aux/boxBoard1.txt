@@ -1,6 +1,6 @@
 0-Start
 1-Property-Marron1-Brown1-60-null
-2-boxes.ComuBox
+2-boxes.ComuCardBox
 3-Property-Marron2-Brown2-60-null
 4-boxes.TaxBox-incomeTax
 5-Station-Estacion1-null-200
@@ -15,7 +15,7 @@
 14-Property-Rosa3-Pink3-160-null
 15-Station-Station2-null-200
 16-Property-Naranja1-Orange1-180-null
-17-boxes.ComuBox
+17-boxes.ComuCardBox
 18-Property-Naranja2-Orange2-180-null
 19-Property-Naranja3-Orange3-200-null
 20-boxes.TaxBox-ParkingFree
@@ -31,7 +31,7 @@
 30-boxes.JailBox-goToJail
 31-Property-Verde1-Green1-300-null
 32-Property-Verde2-Green2-300-null
-33-boxes.ComuBox
+33-boxes.ComuCardBox
 34-Property-Verde3-Green3-320-null
 35-Station-Station4-null-200
 36-ChanceCard

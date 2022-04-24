@@ -11,7 +11,7 @@ public class PropertyBox extends Box {
     private String name;
     private String color;
     private int price;
-    protected String propietary;
+    String propietary;
 
     // Constructor
     public PropertyBox(int idBox, String typeOfBox, String name, String color, int price,

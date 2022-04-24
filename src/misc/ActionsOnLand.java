@@ -1,10 +1,15 @@
 package misc;
 
 import boxes.*;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Parser;
 import sun.awt.X11.XSystemTrayPeer;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import static boxes.ChanceCardBox.chance;
+import static boxes.ComuCardBox.comu;
+import static java.lang.Integer.parseInt;
 
 /*
  * 24/2/22
@@ -105,6 +110,97 @@ public class ActionsOnLand {
             } else {
                 System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
                 // player.toJail();
+            }
+
+            // -------------------------
+            // OPTIONS FOR COMUNITY CARD
+            // -------------------------
+
+        } else if (landBox instanceof ComuCardBox) {
+           String[] comu = comu();
+           int num = parseInt(comu[0]);
+           // Print the description of the card
+           System.out.println(comu[1]);
+           // Execute the option for the card
+           switch(num) {
+               case 1:
+                   player.setPos(0); // TODO Chequear si cobra los 200??
+                   break;
+               case 2:
+                   player.receive(200);
+                   break;
+               case 3:
+                   player.pay(50);
+                   break;
+               case 4:
+                   player.receive(50);
+                   break;
+               case 5:
+                    player.setFreeJailCard(player.getFreeJailCard() + 1);
+                   break;
+               case 6:
+                   // TODO Aqui necesito método de carcel
+                   break;
+               case 7:
+                   // TODO Como accedo aquí al tamaño de jugadores? (Metodo game() - NewGame)
+                   // Quizás debo tener más acceso al array de players para eliminar algun jugador segun
+                   // avanza la partida??
+                   // player.receive(NewGame.game);
+                   break;
+               case 8:
+                   player.pay(100);
+                   break;
+               case 9:
+                   // TODO Metodo de construccion, acceder a viviendas
+                   break;
+               case 10:
+                   player.receive(100);
+                   break;
+           }
+
+            // -------------------------
+            // OPTIONS FOR CHANCE CARD
+            // -------------------------
+
+        } else if (landBox instanceof ChanceCardBox) {
+            String[] chance = chance();
+            int num = parseInt(chance[0]);
+            // Print the description of the card
+            System.out.println(chance[1]);
+            // Execute the option for the card
+            switch(num) {
+                case 1:
+                    player.setPos(39);
+                    break;
+                case 2:
+                    player.setPos(0);  // Cobra??
+                    break;
+                case 3:
+                    if (player.getPos() > 16) {
+                        player.receive(200);
+                    }
+                    player.setPos(16);
+                    break;
+                case 4:
+                    // TODO ESTACIONES
+                    break;
+                case 5:
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
             }
         }
     }

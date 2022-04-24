@@ -10,7 +10,7 @@ package boxes;
  */
 public class StationBox extends Box {
     private String stationName;
-    private String propietary;
+    String propietary;
     private int price;
 
     // Constructor

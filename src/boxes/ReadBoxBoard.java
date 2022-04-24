@@ -31,10 +31,10 @@ package boxes; /*
                     monopolyBoard[i] = new StartBox(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("Comucard")) {
-                    monopolyBoard[i] = new ComuBox(idBox, type);
+                    monopolyBoard[i] = new ComuCardBox(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("ChanceCard")) {
-                    monopolyBoard[i] = new ChanceBox(idBox, type);
+                    monopolyBoard[i] = new ChanceCardBox(idBox, type);
                     i++;
                 } else if (idBox == i && type.equals("boxes.TaxBox")) {
                     String typeOfTax = boxData[2];
