@@ -20,20 +20,18 @@ public class ChanceCardBox extends Box {
     }
 
     // Método para leer el chance.TXT
-    // TODO CHEQUEAR ESTO, que me devuelva una linea random del archivo, pero devuelve casi siempre la misma
-    public static String[] chance() {
+    public static String[] chance()  {
         Reader r = new Reader("./src/aux/chanceCard.txt");
         String[] fields = new String[2];
         int i = 0;
-        int random = (int) ((Math.random() * 10) + 1);
-        // r.readLine(); // Skip fields header
+        int random = (int) ((Math.random() * 9) + 1);
         String readEntry = r.readLine();
         while (i < random && r.readLine() != null) {
-            fields = readEntry.split("-");
             i++;
             readEntry = r.readLine();
         }
         r.close();
+        fields = readEntry.split("-");
         return fields;
     }
 }

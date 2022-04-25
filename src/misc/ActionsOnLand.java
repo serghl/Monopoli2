@@ -55,7 +55,6 @@ public class ActionsOnLand {
                 System.out.println("Has caido en " + ((PropertyBox) landBox).getName() + " y es propiedad de :" + ((PropertyBox) landBox).getPropietary());
             }
 
-
             // ------------------
             // OPTIONS FOR A STATION
             // ------------------
@@ -85,6 +84,7 @@ public class ActionsOnLand {
             // ------------------
             // OPTIONS FOR TAXBOX
             // ------------------
+
         } else if (landBox instanceof TaxBox) {
             if (((TaxBox) landBox).getTypeOfTax().equals("incomeTax")) {
                 player.pay(200);
@@ -105,11 +105,11 @@ public class ActionsOnLand {
             // ------------------
 
         } else if (landBox instanceof JailBox) {
-            if (((JailBox) landBox).getTypeOfJail().equals("boxes.JailBox")) {
+            if (((JailBox) landBox).getTypeOfJail().equals("JailBox")) {
                 System.out.println("Has caído en la carcel, pero tranquil@, sólo estás de paso!");
-            } else {
+            } else if (((JailBox) landBox).getTypeOfJail().equals("goToJail")){
                 System.out.println("Has caído en la carcel, pal TALEGO y sin cobrar los 200!");
-                // player.toJail();
+                player.toJail();
             }
 
             // -------------------------

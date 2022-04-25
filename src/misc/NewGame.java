@@ -5,6 +5,8 @@ import boxes.ReadBoxBoard;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static boxes.ReadBoxBoard.readTxt;
+
 /*
  * 24/2/22
  *

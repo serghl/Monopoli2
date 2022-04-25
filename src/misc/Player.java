@@ -18,7 +18,7 @@ public class Player {
     private int pos;
     private int turnsJail;
 
-    private int freeJailCard; // TODO Aqui por ejemplo puede ser private??
+    private int freeJailCard;
     private ArrayList<Box> properties;
 
     // Constructores
@@ -108,7 +108,7 @@ public class Player {
     public void showProperties() {
         System.out.println("Estas son tus propiedades : ");
         for (int i = 0; i < properties.size(); i++)
-            // TODO PREGUNTAR AQUI COMO TENER ACCESO AL NOMBRE DE LA CLASE HIJA
+
             System.out.println(properties.get(i).getidBox() + "-" + properties.get(i).getType());
     }
 
@@ -120,20 +120,18 @@ public class Player {
             System.out.println("No tienes suficiente lana para esto!");
         }
     }
-// TODO CONSULTA CON RAFEL SI ES MAS EFICIENTE CONSULTAR UN ATRIBUTO O UN METODO
 
     // Get player in Jail
-/*
+
  public void toJail() {
        setPos(10);
        setTurnsJail(3);
  }
-*/
+
     // Receive an amount of money
 
     public void receive(int amount) {
         this.moneyLeft += amount;
     }
-
 
 }
